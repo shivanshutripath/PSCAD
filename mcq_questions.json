@@ -1,0 +1,2603 @@
+{
+  "metadata": {
+    "seed": 42,
+    "easy_count": 50,
+    "medium_count": 50,
+    "hard_count": 50,
+    "total_questions": 150,
+    "categories": [
+      "Angle Analysis",
+      "Branch Current",
+      "Branch Flow",
+      "Branch Loading",
+      "Branch Losses",
+      "Bus Power",
+      "Bus Voltage",
+      "Bus Voltage Angle",
+      "Constraint Analysis",
+      "Cost Distribution",
+      "Economic Analysis",
+      "Economic Dispatch",
+      "Generation Cost",
+      "Generation Distribution",
+      "Generator Dispatch",
+      "Generator Limits",
+      "Generator Reserve",
+      "Generator Utilization",
+      "Line Parameters",
+      "Load Data",
+      "Loss Distribution",
+      "Network Topology",
+      "Per-Unit System",
+      "Power Balance",
+      "Power Factor",
+      "System Losses",
+      "System Parameters",
+      "System Reserve",
+      "System Statistics",
+      "System Summary",
+      "Voltage Quality"
+    ]
+  },
+  "opf_summary": {
+    "total_gen_P_MW": 185.7954,
+    "total_gen_Q_Mvar": 2.3665,
+    "total_load_P_MW": 185.0,
+    "total_load_Q_Mvar": 70.0,
+    "total_Ploss_MW": 0.7954,
+    "total_Qloss_Mvar": -67.6335,
+    "total_cost": 39.871796
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the reactive power demand of Load A?",
+      "options": {
+        "A": "20.0000 Mvar",
+        "B": "21.0548 Mvar",
+        "C": "-19.9858 Mvar",
+        "D": "-19.7537 Mvar"
+      },
+      "correct_answer": "A",
+      "correct_value": "20.0000 Mvar",
+      "category": "Load Data",
+      "difficulty": "Easy",
+      "explanation": "Load A demands 20.0000 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_load"
+    },
+    {
+      "id": 2,
+      "question": "What is the loading percentage of Line 1-4?",
+      "options": {
+        "A": "613.40 %",
+        "B": "696.66 %",
+        "C": "658.36 %",
+        "D": "1316.72 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "658.36 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 1-4 has loading = 658.36 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 3,
+      "question": "What is the voltage magnitude at Bus 5?",
+      "options": {
+        "A": "2.4730 p.u.",
+        "B": "2.1659 p.u.",
+        "C": "2.2211 p.u.",
+        "D": "1.7769 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "2.2211 p.u.",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 5 has Vm = 2.2211 p.u..",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 4,
+      "question": "What is the total active power load?",
+      "options": {
+        "A": "-189.9119 MW",
+        "B": "-188.3354 MW",
+        "C": "-186.1124 MW",
+        "D": "185.0000 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "185.0000 MW",
+      "category": "System Summary",
+      "difficulty": "Easy",
+      "explanation": "From the OPF summary: total_load_P_MW = 185.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "summary_lookup"
+    },
+    {
+      "id": 5,
+      "question": "What is the reactance (x) of Line 0-7 in per-unit?",
+      "options": {
+        "A": "0.090000 p.u.",
+        "B": "0.089956 p.u.",
+        "C": "0.072000 p.u.",
+        "D": "-0.089920 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.090000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 0-7 has x = 0.090000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 6,
+      "question": "What is the voltage magnitude at Bus 6?",
+      "options": {
+        "A": "-2.2450 p.u.",
+        "B": "2.4543 p.u.",
+        "C": "-2.2537 p.u.",
+        "D": "2.2311 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "2.2311 p.u.",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 6 has Vm = 2.2311 p.u..",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 7,
+      "question": "What is the maximum power capacity (Pmax) of Gen 4?",
+      "options": {
+        "A": "180.0000 MW",
+        "B": "164.6848 MW",
+        "C": "360.0000 MW",
+        "D": "-186.8480 MW"
+      },
+      "correct_answer": "A",
+      "correct_value": "180.0000 MW",
+      "category": "Generator Limits",
+      "difficulty": "Easy",
+      "explanation": "Gen 4 has Pmax = 180.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_limits_lookup"
+    },
+    {
+      "id": 8,
+      "question": "Which generator has the lowest linear cost coefficient?",
+      "options": {
+        "A": "Gen 4",
+        "B": "Gen 1 (Slack)",
+        "C": "Gen 2",
+        "D": "Gen 3"
+      },
+      "correct_answer": "C",
+      "correct_value": "Gen 2",
+      "category": "Economic Dispatch",
+      "difficulty": "Easy",
+      "explanation": "Gen 2 has Cost = 18.0.",
+      "source": "deterministic-template",
+      "template_name": "extrema_id"
+    },
+    {
+      "id": 9,
+      "question": "What is the active power dispatch of Gen 1 (Slack)?",
+      "options": {
+        "A": "15.3866 MW",
+        "B": "-17.3318 MW",
+        "C": "17.2004 MW",
+        "D": "13.7603 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "17.2004 MW",
+      "category": "Generator Dispatch",
+      "difficulty": "Easy",
+      "explanation": "Gen 1 (Slack) dispatches 17.2004 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_gen"
+    },
+    {
+      "id": 10,
+      "question": "What is the loading percentage of Line 0-7?",
+      "options": {
+        "A": "1868.73 %",
+        "B": "-2075.70 %",
+        "C": "2268.84 %",
+        "D": "2062.58 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "2062.58 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 0-7 has loading = 2062.58 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 11,
+      "question": "What is the total reactive power loss?",
+      "options": {
+        "A": "-74.3969 Mvar",
+        "B": "69.3478 Mvar",
+        "C": "67.1995 Mvar",
+        "D": "-67.6335 Mvar"
+      },
+      "correct_answer": "D",
+      "correct_value": "-67.6335 Mvar",
+      "category": "System Losses",
+      "difficulty": "Easy",
+      "explanation": "From the OPF summary: total_Qloss_Mvar = -67.6335 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "summary_lookup"
+    },
+    {
+      "id": 12,
+      "question": "What is the resistance (r) of Line 4-5 in per-unit?",
+      "options": {
+        "A": "-0.049525 p.u.",
+        "B": "0.050000 p.u.",
+        "C": "-0.048367 p.u.",
+        "D": "0.044716 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.050000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 4-5 has r = 0.050000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 13,
+      "question": "What is the active power injection at Bus 3?",
+      "options": {
+        "A": "0.2000 MW",
+        "B": "0.0350 MW",
+        "C": "0.0076 MW",
+        "D": "0.0000 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.0000 MW",
+      "category": "Bus Power",
+      "difficulty": "Easy",
+      "explanation": "P injection at Bus 3 = 0.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "bus_injection_lookup"
+    },
+    {
+      "id": 14,
+      "question": "How many transmission lines (branches) are in the system?",
+      "options": {
+        "A": "11",
+        "B": "10",
+        "C": "9",
+        "D": "8"
+      },
+      "correct_answer": "C",
+      "correct_value": "9",
+      "category": "Network Topology",
+      "difficulty": "Easy",
+      "explanation": "The system has exactly 9 transmission lines (branches).",
+      "source": "deterministic-template",
+      "template_name": "count_elements"
+    },
+    {
+      "id": 15,
+      "question": "What is the maximum power capacity (Pmax) of Gen 2?",
+      "options": {
+        "A": "-152.3949 MW",
+        "B": "150.0000 MW",
+        "C": "143.4671 MW",
+        "D": "-154.7724 MW"
+      },
+      "correct_answer": "B",
+      "correct_value": "150.0000 MW",
+      "category": "Generator Limits",
+      "difficulty": "Easy",
+      "explanation": "Gen 2 has Pmax = 150.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_limits_lookup"
+    },
+    {
+      "id": 16,
+      "question": "What is the minimum power limit (Pmin) of Gen 3?",
+      "options": {
+        "A": "-9.7971 MW",
+        "B": "-10.1934 MW",
+        "C": "10.0000 MW",
+        "D": "11.0000 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "10.0000 MW",
+      "category": "Generator Limits",
+      "difficulty": "Easy",
+      "explanation": "Gen 3 has Pmin = 10.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_limits_lookup"
+    },
+    {
+      "id": 17,
+      "question": "What is the from-end active power flow (Pf) on Line 0-1?",
+      "options": {
+        "A": "-2.7402 MW",
+        "B": "-3.0827 MW",
+        "C": "-3.4252 MW",
+        "D": "-3.1066 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "-3.4252 MW",
+      "category": "Branch Flow",
+      "difficulty": "Easy",
+      "explanation": "Pf on Line 0-1 = -3.4252 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 18,
+      "question": "What is the loading percentage of Line 1-2?",
+      "options": {
+        "A": "3165.34 %",
+        "B": "6963.76 %",
+        "C": "6330.69 %",
+        "D": "-6517.91 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "6330.69 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 1-2 has loading = 6330.69 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 19,
+      "question": "What is the from-end active power flow (Pf) on Line 3-5?",
+      "options": {
+        "A": "-30.6744 MW",
+        "B": "-27.8367 MW",
+        "C": "-28.2174 MW",
+        "D": "-13.9184 MW"
+      },
+      "correct_answer": "B",
+      "correct_value": "-27.8367 MW",
+      "category": "Branch Flow",
+      "difficulty": "Easy",
+      "explanation": "Pf on Line 3-5 = -27.8367 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 20,
+      "question": "What is the reactance (x) of Line 4-5 in per-unit?",
+      "options": {
+        "A": "0.100000 p.u.",
+        "B": "0.110000 p.u.",
+        "C": "0.080000 p.u.",
+        "D": "0.050000 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.100000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 4-5 has x = 0.100000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 21,
+      "question": "What is the voltage magnitude at Bus 2?",
+      "options": {
+        "A": "2.4387 p.u.",
+        "B": "2.2233 p.u.",
+        "C": "-2.2792 p.u.",
+        "D": "2.2170 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "2.2170 p.u.",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 2 has Vm = 2.2170 p.u..",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 22,
+      "question": "What is the resistance (r) of Line 5-6 in per-unit?",
+      "options": {
+        "A": "0.030000 p.u.",
+        "B": "-0.029490 p.u.",
+        "C": "0.033000 p.u.",
+        "D": "0.029784 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.030000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 5-6 has r = 0.030000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 23,
+      "question": "What is the loading percentage of Line 4-5?",
+      "options": {
+        "A": "4185.08 %",
+        "B": "4017.90 %",
+        "C": "-4326.71 %",
+        "D": "4357.23 %"
+      },
+      "correct_answer": "A",
+      "correct_value": "4185.08 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 4-5 has loading = 4185.08 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 24,
+      "question": "What is the reactive power demand of Load C?",
+      "options": {
+        "A": "23.4691 Mvar",
+        "B": "25.0000 Mvar",
+        "C": "22.3552 Mvar",
+        "D": "-25.6884 Mvar"
+      },
+      "correct_answer": "B",
+      "correct_value": "25.0000 Mvar",
+      "category": "Load Data",
+      "difficulty": "Easy",
+      "explanation": "Load C demands 25.0000 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_load"
+    },
+    {
+      "id": 25,
+      "question": "What is the active power injection at Bus 0?",
+      "options": {
+        "A": "0.1000 MW",
+        "B": "-0.0071 MW",
+        "C": "-0.0162 MW",
+        "D": "0.0000 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.0000 MW",
+      "category": "Bus Power",
+      "difficulty": "Easy",
+      "explanation": "P injection at Bus 0 = 0.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "bus_injection_lookup"
+    },
+    {
+      "id": 26,
+      "question": "What is the voltage magnitude at Bus 3?",
+      "options": {
+        "A": "1.9915 p.u.",
+        "B": "1.1064 p.u.",
+        "C": "2.2127 p.u.",
+        "D": "2.2369 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "2.2127 p.u.",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 3 has Vm = 2.2127 p.u..",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 27,
+      "question": "What is the active power dispatch of Gen 2?",
+      "options": {
+        "A": "57.2952 MW",
+        "B": "-63.4017 MW",
+        "C": "56.8490 MW",
+        "D": "63.1656 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "63.1656 MW",
+      "category": "Generator Dispatch",
+      "difficulty": "Easy",
+      "explanation": "Gen 2 dispatches 63.1656 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_gen"
+    },
+    {
+      "id": 28,
+      "question": "What is the voltage angle at Bus 5?",
+      "options": {
+        "A": "-0.3949 \u00b0",
+        "B": "-0.3590 \u00b0",
+        "C": "0.3618 \u00b0",
+        "D": "-0.7180 \u00b0"
+      },
+      "correct_answer": "B",
+      "correct_value": "-0.3590 \u00b0",
+      "category": "Bus Voltage Angle",
+      "difficulty": "Easy",
+      "explanation": "Bus 5 has Va = -0.3590 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 29,
+      "question": "What is the reactance (x) of Line 6-7 in per-unit?",
+      "options": {
+        "A": "0.102174 p.u.",
+        "B": "0.220000 p.u.",
+        "C": "0.110000 p.u.",
+        "D": "-0.110681 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "0.110000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 6-7 has x = 0.110000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 30,
+      "question": "What is the reactance (x) of Line 0-1 in per-unit?",
+      "options": {
+        "A": "0.125361 p.u.",
+        "B": "0.110000 p.u.",
+        "C": "0.132000 p.u.",
+        "D": "0.121000 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.110000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 0-1 has x = 0.110000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 31,
+      "question": "Which generator has the highest linear cost coefficient?",
+      "options": {
+        "A": "Gen 2",
+        "B": "Gen 3",
+        "C": "Gen 1 (Slack)",
+        "D": "Gen 4"
+      },
+      "correct_answer": "D",
+      "correct_value": "Gen 4",
+      "category": "Economic Dispatch",
+      "difficulty": "Easy",
+      "explanation": "Gen 4 has Cost = 25.0.",
+      "source": "deterministic-template",
+      "template_name": "extrema_id"
+    },
+    {
+      "id": 32,
+      "question": "What is the resistance (r) of Line 0-1 in per-unit?",
+      "options": {
+        "A": "0.040000 p.u.",
+        "B": "0.050640 p.u.",
+        "C": "0.052068 p.u.",
+        "D": "0.050000 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "0.050000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 0-1 has r = 0.050000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 33,
+      "question": "What is the loading percentage of Line 5-6?",
+      "options": {
+        "A": "3920.41 %",
+        "B": "4900.51 %",
+        "C": "5248.30 %",
+        "D": "-4762.13 %"
+      },
+      "correct_answer": "B",
+      "correct_value": "4900.51 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 5-6 has loading = 4900.51 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 34,
+      "question": "What is the system MVA base (Sbase)?",
+      "options": {
+        "A": "50.0000 MVA",
+        "B": "10.0000 MVA",
+        "C": "100.0000 MVA",
+        "D": "1000.0000 MVA"
+      },
+      "correct_answer": "C",
+      "correct_value": "100.0000 MVA",
+      "category": "System Parameters",
+      "difficulty": "Easy",
+      "explanation": "Sbase = 100.0000 MVA.",
+      "source": "deterministic-template",
+      "template_name": "convergence_info"
+    },
+    {
+      "id": 35,
+      "question": "What is the active power dispatch of Gen 3?",
+      "options": {
+        "A": "21.9580 MW",
+        "B": "45.5195 MW",
+        "C": "43.9159 MW",
+        "D": "48.4097 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "43.9159 MW",
+      "category": "Generator Dispatch",
+      "difficulty": "Easy",
+      "explanation": "Gen 3 dispatches 43.9159 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_gen"
+    },
+    {
+      "id": 36,
+      "question": "Which bus has the smallest absolute voltage angle?",
+      "options": {
+        "A": "Bus 2",
+        "B": "Bus 1",
+        "C": "Bus 0",
+        "D": "Bus 3"
+      },
+      "correct_answer": "C",
+      "correct_value": "Bus 0",
+      "category": "Bus Voltage Angle",
+      "difficulty": "Easy",
+      "explanation": "Bus 0 has Va = -0.0\u00b0.",
+      "source": "deterministic-template",
+      "template_name": "extrema_id"
+    },
+    {
+      "id": 37,
+      "question": "What is the voltage angle at Bus 0?",
+      "options": {
+        "A": "0.1000 \u00b0",
+        "B": "0.0343 \u00b0",
+        "C": "0.0546 \u00b0",
+        "D": "-0.0000 \u00b0"
+      },
+      "correct_answer": "D",
+      "correct_value": "-0.0000 \u00b0",
+      "category": "Bus Voltage Angle",
+      "difficulty": "Easy",
+      "explanation": "Bus 0 has Va = -0.0000 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 38,
+      "question": "What is the loading percentage of Line 6-7?",
+      "options": {
+        "A": "-1553.65 %",
+        "B": "1477.54 %",
+        "C": "1523.96 %",
+        "D": "1397.28 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "1523.96 %",
+      "category": "Branch Loading",
+      "difficulty": "Easy",
+      "explanation": "Line 6-7 has loading = 1523.96 %.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 39,
+      "question": "What is the total reactive power generation?",
+      "options": {
+        "A": "2.6031 Mvar",
+        "B": "2.3665 Mvar",
+        "C": "2.6078 Mvar",
+        "D": "-2.3036 Mvar"
+      },
+      "correct_answer": "B",
+      "correct_value": "2.3665 Mvar",
+      "category": "System Summary",
+      "difficulty": "Easy",
+      "explanation": "From the OPF summary: total_gen_Q_Mvar = 2.3665 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "summary_lookup"
+    },
+    {
+      "id": 40,
+      "question": "What is the voltage magnitude at Bus 1?",
+      "options": {
+        "A": "2.2341 p.u.",
+        "B": "-2.2562 p.u.",
+        "C": "2.0107 p.u.",
+        "D": "2.1953 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "2.2341 p.u.",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 1 has Vm = 2.2341 p.u..",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 41,
+      "question": "What is the from-end active power flow (Pf) on Line 1-4?",
+      "options": {
+        "A": "-2.4964 MW",
+        "B": "-2.7738 MW",
+        "C": "-1.3869 MW",
+        "D": "-2.4816 MW"
+      },
+      "correct_answer": "B",
+      "correct_value": "-2.7738 MW",
+      "category": "Branch Flow",
+      "difficulty": "Easy",
+      "explanation": "Pf on Line 1-4 = -2.7738 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_branch"
+    },
+    {
+      "id": 42,
+      "question": "What is the total reactive power load?",
+      "options": {
+        "A": "70.0000 Mvar",
+        "B": "74.3348 Mvar",
+        "C": "68.8082 Mvar",
+        "D": "67.5437 Mvar"
+      },
+      "correct_answer": "A",
+      "correct_value": "70.0000 Mvar",
+      "category": "System Summary",
+      "difficulty": "Easy",
+      "explanation": "From the OPF summary: total_load_Q_Mvar = 70.0000 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "summary_lookup"
+    },
+    {
+      "id": 43,
+      "question": "What is the reactive power demand of Load D?",
+      "options": {
+        "A": "9.0277 Mvar",
+        "B": "11.0000 Mvar",
+        "C": "10.6682 Mvar",
+        "D": "10.0000 Mvar"
+      },
+      "correct_answer": "D",
+      "correct_value": "10.0000 Mvar",
+      "category": "Load Data",
+      "difficulty": "Easy",
+      "explanation": "Load D demands 10.0000 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_load"
+    },
+    {
+      "id": 44,
+      "question": "What is the active power injection at Bus 1?",
+      "options": {
+        "A": "0.0291 MW",
+        "B": "0.0610 MW",
+        "C": "0.0000 MW",
+        "D": "0.0675 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.0000 MW",
+      "category": "Bus Power",
+      "difficulty": "Easy",
+      "explanation": "P injection at Bus 1 = 0.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "bus_injection_lookup"
+    },
+    {
+      "id": 45,
+      "question": "Which bus has the highest voltage magnitude?",
+      "options": {
+        "A": "Bus 0",
+        "B": "Bus 2",
+        "C": "Bus 1",
+        "D": "Bus 4"
+      },
+      "correct_answer": "D",
+      "correct_value": "Bus 4",
+      "category": "Bus Voltage",
+      "difficulty": "Easy",
+      "explanation": "Bus 4 has Vm = 2.234807 p.u.",
+      "source": "deterministic-template",
+      "template_name": "extrema_id"
+    },
+    {
+      "id": 46,
+      "question": "What is the resistance (r) of Line 3-5 in per-unit?",
+      "options": {
+        "A": "0.036000 p.u.",
+        "B": "0.040000 p.u.",
+        "C": "0.036077 p.u.",
+        "D": "0.020000 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.040000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 3-5 has r = 0.040000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 47,
+      "question": "What is the reactance (x) of Line 3-5 in per-unit?",
+      "options": {
+        "A": "0.120000 p.u.",
+        "B": "0.118938 p.u.",
+        "C": "0.132000 p.u.",
+        "D": "0.137890 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.120000 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Easy",
+      "explanation": "Line 3-5 has x = 0.120000 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_params_lookup"
+    },
+    {
+      "id": 48,
+      "question": "What is the active power demand of Load C?",
+      "options": {
+        "A": "66.0000 MW",
+        "B": "62.8593 MW",
+        "C": "60.0000 MW",
+        "D": "-59.9073 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "60.0000 MW",
+      "category": "Load Data",
+      "difficulty": "Easy",
+      "explanation": "Load C demands 60.0000 MW.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_load"
+    },
+    {
+      "id": 49,
+      "question": "What is the voltage angle at Bus 7?",
+      "options": {
+        "A": "-0.3018 \u00b0",
+        "B": "-0.2220 \u00b0",
+        "C": "-0.2190 \u00b0",
+        "D": "-0.2018 \u00b0"
+      },
+      "correct_answer": "D",
+      "correct_value": "-0.2018 \u00b0",
+      "category": "Bus Voltage Angle",
+      "difficulty": "Easy",
+      "explanation": "Bus 7 has Va = -0.2018 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 50,
+      "question": "What is the voltage angle at Bus 2?",
+      "options": {
+        "A": "-0.5464 \u00b0",
+        "B": "-0.5673 \u00b0",
+        "C": "-0.7464 \u00b0",
+        "D": "-0.3464 \u00b0"
+      },
+      "correct_answer": "A",
+      "correct_value": "-0.5464 \u00b0",
+      "category": "Bus Voltage Angle",
+      "difficulty": "Easy",
+      "explanation": "Bus 2 has Va = -0.5464 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "direct_lookup_bus"
+    },
+    {
+      "id": 51,
+      "question": "What is the from-end reactive power flow (Qf) on Line 0-1?",
+      "options": {
+        "A": "-7.6837 Mvar",
+        "B": "-6.4031 Mvar",
+        "C": "6.6027 Mvar",
+        "D": "-3.2016 Mvar"
+      },
+      "correct_answer": "B",
+      "correct_value": "-6.4031 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 0-1 = -6.4031 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 52,
+      "question": "Line 2-3 has r = 0.060000 and x = 0.130000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.3926",
+        "B": "0.3692",
+        "C": "0.4014",
+        "D": "0.4615"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.4615",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.060000 / 0.130000 = 0.4615.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 53,
+      "question": "Line 6-7 has r = 0.050000 and x = 0.110000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.4545",
+        "B": "0.3636",
+        "C": "0.4427",
+        "D": "0.5454"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.4545",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.050000 / 0.110000 = 0.4545.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 54,
+      "question": "Line 1-4 has r = 0.030000 and x = 0.080000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.4251",
+        "B": "-0.3745",
+        "C": "0.3678",
+        "D": "0.3750"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.3750",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.030000 / 0.080000 = 0.3750.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 55,
+      "question": "Line 2-3 has Pf = 12.1818 MW and Qf = -0.8444 Mvar. What is the apparent power |Sf|?",
+      "options": {
+        "A": "13.0262 MVA",
+        "B": "13.0262 MVA",
+        "C": "12.2110 MVA",
+        "D": "13.4321 MVA"
+      },
+      "correct_answer": "C",
+      "correct_value": "12.2110 MVA",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "|Sf| = sqrt(Pf\u00b2 + Qf\u00b2) = 12.2110 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_branch"
+    },
+    {
+      "id": 56,
+      "question": "Line 1-2 has r = 0.040000 and x = 0.090000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.050000 p.u.",
+        "B": "0.098489 p.u.",
+        "C": "0.130000 p.u.",
+        "D": "0.196978 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.098489 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.098489 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 57,
+      "question": "What is the from-end reactive power flow (Qf) on Line 1-4?",
+      "options": {
+        "A": "-5.3736 Mvar",
+        "B": "-7.1648 Mvar",
+        "C": "-11.9414 Mvar",
+        "D": "-5.9707 Mvar"
+      },
+      "correct_answer": "D",
+      "correct_value": "-5.9707 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 1-4 = -5.9707 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 58,
+      "question": "Sbase = 100.0000 MVA. Load C consumes 60.0000 MW. What is its per-unit demand?",
+      "options": {
+        "A": "0.060000 p.u.",
+        "B": "0.600000 p.u.",
+        "C": "6.000000 p.u.",
+        "D": "60.000000 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.600000 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 60.0000 / 100.0000 = 0.600000 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_load"
+    },
+    {
+      "id": 59,
+      "question": "Gen 3 dispatches 43.9159 MW with Pmax = 120.0000 MW. What is its utilization?",
+      "options": {
+        "A": "32.9369 %",
+        "B": "41.7370 %",
+        "C": "36.5966 %",
+        "D": "35.4783 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "36.5966 %",
+      "category": "Generator Utilization",
+      "difficulty": "Medium",
+      "explanation": "Utilization = P/Pmax \u00d7 100 = 36.5966 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_utilization"
+    },
+    {
+      "id": 60,
+      "question": "Gen 2 dispatches 63.1656 MW with Pmax = 150.0000 MW. What is the available reserve?",
+      "options": {
+        "A": "63.1656 MW",
+        "B": "150.0000 MW",
+        "C": "43.4172 MW",
+        "D": "86.8344 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "86.8344 MW",
+      "category": "Generator Reserve",
+      "difficulty": "Medium",
+      "explanation": "Reserve = Pmax - P = 150.0000 - 63.1656 = 86.8344 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_reserve"
+    },
+    {
+      "id": 61,
+      "question": "For Line 5-6 with Pf = -46.9413 MW and Qf = -14.0718 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "0.9731",
+        "B": "0.8401",
+        "C": "0.9579",
+        "D": "-0.9745"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.9579",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 46.9413/49.0051 = 0.9579.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 62,
+      "question": "For Line 0-7 with Pf = 20.6255 MW and Qf = 0.1095 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "1.0000",
+        "B": "1.0762",
+        "C": "0.8000",
+        "D": "-0.9696"
+      },
+      "correct_answer": "A",
+      "correct_value": "1.0000",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 20.6255/20.6258 = 1.0000.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 63,
+      "question": "What is the production cost (Pcost) of Gen 4 in the OPF solution?",
+      "options": {
+        "A": "15.384052",
+        "B": "13.525006",
+        "C": "-14.621115",
+        "D": "30.768104"
+      },
+      "correct_answer": "A",
+      "correct_value": "15.384052",
+      "category": "Generation Cost",
+      "difficulty": "Medium",
+      "explanation": "Gen 4 has Pcost = 15.384052.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_lookup"
+    },
+    {
+      "id": 64,
+      "question": "Line 0-7 has r = 0.040000 and x = 0.090000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.098489 p.u.",
+        "B": "0.130000 p.u.",
+        "C": "0.196978 p.u.",
+        "D": "0.050000 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.098489 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.098489 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 65,
+      "question": "Sbase = 100.0000 MVA. Gen 3 produces 43.9159 MW. What is its per-unit output?",
+      "options": {
+        "A": "0.219580 p.u.",
+        "B": "43.915900 p.u.",
+        "C": "43.915900 p.u.",
+        "D": "0.439159 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "0.439159 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 43.9159 / 100.0000 = 0.439159 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_gen"
+    },
+    {
+      "id": 66,
+      "question": "What is the from-end reactive power flow (Qf) on Line 5-6?",
+      "options": {
+        "A": "-7.0359 Mvar",
+        "B": "13.8067 Mvar",
+        "C": "14.4614 Mvar",
+        "D": "-14.0718 Mvar"
+      },
+      "correct_answer": "D",
+      "correct_value": "-14.0718 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 5-6 = -14.0718 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 67,
+      "question": "What is the from-end reactive power flow (Qf) on Line 2-3?",
+      "options": {
+        "A": "0.8789 Mvar",
+        "B": "-0.8841 Mvar",
+        "C": "-0.8444 Mvar",
+        "D": "-0.9324 Mvar"
+      },
+      "correct_answer": "C",
+      "correct_value": "-0.8444 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 2-3 = -0.8444 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 68,
+      "question": "Gen 4 dispatches 61.5135 MW with Pmax = 180.0000 MW. What is the available reserve?",
+      "options": {
+        "A": "118.4865 MW",
+        "B": "59.2433 MW",
+        "C": "61.5135 MW",
+        "D": "180.0000 MW"
+      },
+      "correct_answer": "A",
+      "correct_value": "118.4865 MW",
+      "category": "Generator Reserve",
+      "difficulty": "Medium",
+      "explanation": "Reserve = Pmax - P = 180.0000 - 61.5135 = 118.4865 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_reserve"
+    },
+    {
+      "id": 69,
+      "question": "Line 4-5 has r = 0.050000 and x = 0.100000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.6000",
+        "B": "0.5997",
+        "C": "0.4000",
+        "D": "0.5000"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.5000",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.050000 / 0.100000 = 0.5000.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 70,
+      "question": "What is the from-end reactive power flow (Qf) on Line 0-7?",
+      "options": {
+        "A": "0.1095 Mvar",
+        "B": "0.1179 Mvar",
+        "C": "0.0575 Mvar",
+        "D": "0.0723 Mvar"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.1095 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 0-7 = 0.1095 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 71,
+      "question": "Gen 1 (Slack) dispatches 17.2004 MW with Pmax = 200.0000 MW. What is the available reserve?",
+      "options": {
+        "A": "200.0000 MW",
+        "B": "17.2004 MW",
+        "C": "91.3998 MW",
+        "D": "182.7996 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "182.7996 MW",
+      "category": "Generator Reserve",
+      "difficulty": "Medium",
+      "explanation": "Reserve = Pmax - P = 200.0000 - 17.2004 = 182.7996 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_reserve"
+    },
+    {
+      "id": 72,
+      "question": "Gen 4 dispatches 61.5135 MW with Pmax = 180.0000 MW. What is its utilization?",
+      "options": {
+        "A": "39.1857 %",
+        "B": "37.1145 %",
+        "C": "34.1742 %",
+        "D": "17.0871 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "34.1742 %",
+      "category": "Generator Utilization",
+      "difficulty": "Medium",
+      "explanation": "Utilization = P/Pmax \u00d7 100 = 34.1742 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_utilization"
+    },
+    {
+      "id": 73,
+      "question": "Total load = 185.0000 MW, total losses = 0.7954 MW. What must total generation be?",
+      "options": {
+        "A": "184.2046 MW",
+        "B": "185.0000 MW",
+        "C": "185.7954 MW",
+        "D": "186.5908 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "185.7954 MW",
+      "category": "Power Balance",
+      "difficulty": "Medium",
+      "explanation": "P_gen = P_load + P_loss.",
+      "source": "deterministic-template",
+      "template_name": "power_balance"
+    },
+    {
+      "id": 74,
+      "question": "What is the from-end reactive power flow (Qf) on Line 6-7?",
+      "options": {
+        "A": "-4.9010 Mvar",
+        "B": "-3.9208 Mvar",
+        "C": "-5.1691 Mvar",
+        "D": "-2.4505 Mvar"
+      },
+      "correct_answer": "A",
+      "correct_value": "-4.9010 Mvar",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "Qf on Line 6-7 = -4.9010 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "branch_qf_lookup"
+    },
+    {
+      "id": 75,
+      "question": "Gen 2 dispatches 63.1656 MW with Pmax = 150.0000 MW. What is its utilization?",
+      "options": {
+        "A": "-43.3010 %",
+        "B": "37.8994 %",
+        "C": "42.1104 %",
+        "D": "-44.0782 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "42.1104 %",
+      "category": "Generator Utilization",
+      "difficulty": "Medium",
+      "explanation": "Utilization = P/Pmax \u00d7 100 = 42.1104 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_utilization"
+    },
+    {
+      "id": 76,
+      "question": "Line 5-6 has Pf = -46.9413 MW and Qf = -14.0718 Mvar. What is the apparent power |Sf|?",
+      "options": {
+        "A": "53.9056 MVA",
+        "B": "49.0051 MVA",
+        "C": "61.0131 MVA",
+        "D": "32.8695 MVA"
+      },
+      "correct_answer": "B",
+      "correct_value": "49.0051 MVA",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "|Sf| = sqrt(Pf\u00b2 + Qf\u00b2) = 49.0051 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_branch"
+    },
+    {
+      "id": 77,
+      "question": "Gen 3 dispatches 43.9159 MW with Pmax = 120.0000 MW. What is the available reserve?",
+      "options": {
+        "A": "43.9159 MW",
+        "B": "38.0421 MW",
+        "C": "76.0841 MW",
+        "D": "120.0000 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "76.0841 MW",
+      "category": "Generator Reserve",
+      "difficulty": "Medium",
+      "explanation": "Reserve = Pmax - P = 120.0000 - 43.9159 = 76.0841 MW.",
+      "source": "deterministic-template",
+      "template_name": "gen_reserve"
+    },
+    {
+      "id": 78,
+      "question": "Line 6-7 has Pf = 14.4301 MW and Qf = -4.9010 Mvar. What is the apparent power |Sf|?",
+      "options": {
+        "A": "15.2397 MVA",
+        "B": "16.7637 MVA",
+        "C": "19.3311 MVA",
+        "D": "19.3311 MVA"
+      },
+      "correct_answer": "A",
+      "correct_value": "15.2397 MVA",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "|Sf| = sqrt(Pf\u00b2 + Qf\u00b2) = 15.2397 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_branch"
+    },
+    {
+      "id": 79,
+      "question": "Line 0-1 has r = 0.050000 and x = 0.110000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.241660 p.u.",
+        "B": "0.060000 p.u.",
+        "C": "0.160000 p.u.",
+        "D": "0.120830 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "0.120830 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.120830 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 80,
+      "question": "Sbase = 100.0000 MVA. Load A consumes 50.0000 MW. What is its per-unit demand?",
+      "options": {
+        "A": "0.500000 p.u.",
+        "B": "5.000000 p.u.",
+        "C": "50.000000 p.u.",
+        "D": "0.050000 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.500000 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 50.0000 / 100.0000 = 0.500000 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_load"
+    },
+    {
+      "id": 81,
+      "question": "For Line 0-1 with Pf = -3.4252 MW and Qf = -6.4031 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "0.4717",
+        "B": "0.4662",
+        "C": "0.4820",
+        "D": "0.4245"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.4717",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 3.4252/7.2617 = 0.4717.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 82,
+      "question": "Line 5-6 has r = 0.030000 and x = 0.070000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.4286",
+        "B": "0.4788",
+        "C": "0.4891",
+        "D": "0.5143"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.4286",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.030000 / 0.070000 = 0.4286.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 83,
+      "question": "For Line 1-2 with Pf = 62.5129 MW and Qf = 9.9947 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "1.0863",
+        "B": "1.9750",
+        "C": "1.0663",
+        "D": "0.9875"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.9875",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 62.5129/63.3068 = 0.9875.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 84,
+      "question": "Line 2-3 has r = 0.060000 and x = 0.130000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.190000 p.u.",
+        "B": "0.070000 p.u.",
+        "C": "0.143178 p.u.",
+        "D": "0.286356 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "0.143178 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.143178 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 85,
+      "question": "For Line 3-5 with Pf = -27.8367 MW and Qf = -10.9788 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "0.9661",
+        "B": "0.8373",
+        "C": "0.9684",
+        "D": "0.9303"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.9303",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 27.8367/29.9235 = 0.9303.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 86,
+      "question": "Line 6-7 has r = 0.050000 and x = 0.110000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.241660 p.u.",
+        "B": "0.060000 p.u.",
+        "C": "0.160000 p.u.",
+        "D": "0.120830 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "0.120830 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.120830 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 87,
+      "question": "For Line 4-5 with Pf = 41.1416 MW and Qf = 7.6722 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "0.9831",
+        "B": "-0.9560",
+        "C": "1.0814",
+        "D": "0.4915"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.9831",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 41.1416/41.8509 = 0.9831.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 88,
+      "question": "Which branch has the highest active power loss?",
+      "options": {
+        "A": "Line 1-4",
+        "B": "Line 5-6",
+        "C": "Line 4-5",
+        "D": "Line 1-2"
+      },
+      "correct_answer": "D",
+      "correct_value": "Line 1-2",
+      "category": "Branch Losses",
+      "difficulty": "Medium",
+      "explanation": "Line 1-2 has Ploss = 0.3312 MW.",
+      "source": "deterministic-template",
+      "template_name": "ranking_loss"
+    },
+    {
+      "id": 89,
+      "question": "Line 0-1 has r = 0.050000 and x = 0.110000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.2273",
+        "B": "-0.4382",
+        "C": "0.4545",
+        "D": "0.4939"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.4545",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.050000 / 0.110000 = 0.4545.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 90,
+      "question": "Sbase = 100.0000 MVA. Load B consumes 40.0000 MW. What is its per-unit demand?",
+      "options": {
+        "A": "0.400000 p.u.",
+        "B": "4.000000 p.u.",
+        "C": "40.000000 p.u.",
+        "D": "0.040000 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.400000 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 40.0000 / 100.0000 = 0.400000 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_load"
+    },
+    {
+      "id": 91,
+      "question": "Sbase = 100.0000 MVA. Gen 2 produces 63.1656 MW. What is its per-unit output?",
+      "options": {
+        "A": "0.631656 p.u.",
+        "B": "63.165600 p.u.",
+        "C": "63.165600 p.u.",
+        "D": "0.315828 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "0.631656 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 63.1656 / 100.0000 = 0.631656 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_gen"
+    },
+    {
+      "id": 92,
+      "question": "Line 1-4 has Pf = -2.7738 MW and Qf = -5.9707 Mvar. What is the apparent power |Sf|?",
+      "options": {
+        "A": "3.1969 MVA",
+        "B": "8.7445 MVA",
+        "C": "6.5836 MVA",
+        "D": "7.2420 MVA"
+      },
+      "correct_answer": "C",
+      "correct_value": "6.5836 MVA",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "|Sf| = sqrt(Pf\u00b2 + Qf\u00b2) = 6.5836 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_branch"
+    },
+    {
+      "id": 93,
+      "question": "Sbase = 100.0000 MVA. Gen 1 (Slack) produces 17.2004 MW. What is its per-unit output?",
+      "options": {
+        "A": "17.200400 p.u.",
+        "B": "0.086002 p.u.",
+        "C": "0.172004 p.u.",
+        "D": "17.200400 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "0.172004 p.u.",
+      "category": "Per-Unit System",
+      "difficulty": "Medium",
+      "explanation": "P_pu = 17.2004 / 100.0000 = 0.172004 p.u.",
+      "source": "deterministic-template",
+      "template_name": "per_unit_gen"
+    },
+    {
+      "id": 94,
+      "question": "For Line 2-3 with Pf = 12.1818 MW and Qf = -0.8444 Mvar, what is the from-end power factor?",
+      "options": {
+        "A": "0.8978",
+        "B": "1.0974",
+        "C": "0.9976",
+        "D": "1.1471"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.9976",
+      "category": "Power Factor",
+      "difficulty": "Medium",
+      "explanation": "pf = |P|/|S| = 12.1818/12.2110 = 0.9976.",
+      "source": "deterministic-template",
+      "template_name": "power_factor_branch"
+    },
+    {
+      "id": 95,
+      "question": "What is the production cost (Pcost) of Gen 1 (Slack) in the OPF solution?",
+      "options": {
+        "A": "3.096602",
+        "B": "3.197543",
+        "C": "3.740711",
+        "D": "3.440669"
+      },
+      "correct_answer": "D",
+      "correct_value": "3.440669",
+      "category": "Generation Cost",
+      "difficulty": "Medium",
+      "explanation": "Gen 1 (Slack) has Pcost = 3.440669.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_lookup"
+    },
+    {
+      "id": 96,
+      "question": "Line 0-7 has r = 0.040000 and x = 0.090000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "-0.4500",
+        "B": "0.3555",
+        "C": "0.4693",
+        "D": "0.4444"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.4444",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.040000 / 0.090000 = 0.4444.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 97,
+      "question": "What is the production cost (Pcost) of Gen 2 in the OPF solution?",
+      "options": {
+        "A": "-11.825482",
+        "B": "11.379788",
+        "C": "-11.283560",
+        "D": "11.282412"
+      },
+      "correct_answer": "B",
+      "correct_value": "11.379788",
+      "category": "Generation Cost",
+      "difficulty": "Medium",
+      "explanation": "Gen 2 has Pcost = 11.379788.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_lookup"
+    },
+    {
+      "id": 98,
+      "question": "Line 4-5 has Pf = 41.1416 MW and Qf = 7.6722 Mvar. What is the apparent power |Sf|?",
+      "options": {
+        "A": "33.4694 MVA",
+        "B": "48.8138 MVA",
+        "C": "46.0360 MVA",
+        "D": "41.8509 MVA"
+      },
+      "correct_answer": "D",
+      "correct_value": "41.8509 MVA",
+      "category": "Branch Flow",
+      "difficulty": "Medium",
+      "explanation": "|Sf| = sqrt(Pf\u00b2 + Qf\u00b2) = 41.8509 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_branch"
+    },
+    {
+      "id": 99,
+      "question": "Line 3-5 has r = 0.040000 and x = 0.120000 p.u. What is the R/X ratio?",
+      "options": {
+        "A": "0.3333",
+        "B": "0.2835",
+        "C": "0.3865",
+        "D": "-0.3297"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.3333",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "R/X = 0.040000 / 0.120000 = 0.3333.",
+      "source": "deterministic-template",
+      "template_name": "rx_ratio"
+    },
+    {
+      "id": 100,
+      "question": "Line 5-6 has r = 0.030000 and x = 0.070000 p.u. What is |Z|?",
+      "options": {
+        "A": "0.100000 p.u.",
+        "B": "0.076158 p.u.",
+        "C": "0.040000 p.u.",
+        "D": "0.152316 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "0.076158 p.u.",
+      "category": "Line Parameters",
+      "difficulty": "Medium",
+      "explanation": "|Z| = sqrt(r\u00b2 + x\u00b2) = 0.076158 p.u.",
+      "source": "deterministic-template",
+      "template_name": "line_impedance"
+    },
+    {
+      "id": 101,
+      "question": "For Line 1-4, |Sf| = 0.065836 p.u. and Vm_from = 2.234084 p.u. What is the current magnitude |If| = |Sf|/Vm?",
+      "options": {
+        "A": "0.147082 p.u.",
+        "B": "0.065836 p.u.",
+        "C": "0.029469 p.u.",
+        "D": "0.058938 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "0.029469 p.u.",
+      "category": "Branch Current",
+      "difficulty": "Hard",
+      "explanation": "|If| = |Sf|/Vm = 0.065836/2.234084 = 0.029469 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_current_magnitude"
+    },
+    {
+      "id": 102,
+      "question": "Gen 4 produces 61.5135 MW at cost 15.384052. What is the average cost per MW?",
+      "options": {
+        "A": "0.234044",
+        "B": "0.275101",
+        "C": "-0.261681",
+        "D": "0.250092"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.250092",
+      "category": "Economic Analysis",
+      "difficulty": "Hard",
+      "explanation": "Avg cost/MW = Pcost/P = 15.384052/61.5135 = 0.250092.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_per_mw"
+    },
+    {
+      "id": 103,
+      "question": "Bus 7 has Vm = 2.227887 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.227887 p.u.",
+        "B": "0.982310 p.u.",
+        "C": "1.130910 p.u.",
+        "D": "1.585300 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "1.227887 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.227887 - 1.0| = 1.227887 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 104,
+      "question": "Line 0-1 has Ploss = 0.0014 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "0.1760 %",
+        "B": "-0.2176 %",
+        "C": "0.0880 %",
+        "D": "0.2760 %"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.1760 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.0014/0.7954 \u00d7 100 = 0.1760 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 105,
+      "question": "Line 6-7 has Ploss = 0.0209 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "2.6833 %",
+        "B": "2.6523 %",
+        "C": "2.6276 %",
+        "D": "2.7572 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "2.6276 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.0209/0.7954 \u00d7 100 = 2.6276 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 106,
+      "question": "Gen 4 has cost coefficients a = 0.015000, b = 25.000000, and dispatches P = 61.5135 MW. What is its incremental cost (dC/dP = 2aP + b)?",
+      "options": {
+        "A": "29.529946",
+        "B": "21.476324",
+        "C": "-26.891190",
+        "D": "26.845405"
+      },
+      "correct_answer": "D",
+      "correct_value": "26.845405",
+      "category": "Economic Analysis",
+      "difficulty": "Hard",
+      "explanation": "dC/dP = 2 \u00d7 0.015000 \u00d7 61.5135 + 25.000000 = 26.845405.",
+      "source": "deterministic-template",
+      "template_name": "incremental_cost"
+    },
+    {
+      "id": 107,
+      "question": "Gen 4 has Pcost = 15.384052. Total cost = 39.871796. What percentage of total cost does this generator contribute?",
+      "options": {
+        "A": "34.7254 %",
+        "B": "-38.7925 %",
+        "C": "38.5838 %",
+        "D": "42.4422 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "38.5838 %",
+      "category": "Cost Distribution",
+      "difficulty": "Hard",
+      "explanation": "Share = 15.384052/39.871796 \u00d7 100 = 38.5838 %.",
+      "source": "deterministic-template",
+      "template_name": "cost_share_per_gen"
+    },
+    {
+      "id": 108,
+      "question": "For Line 0-1 (Bus 0 \u2192 Bus 1), Va_from = -0.0000\u00b0 and Va_to = 0.0351\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "-0.0351 \u00b0",
+        "B": "0.0351 \u00b0",
+        "C": "0.0702 \u00b0",
+        "D": "-0.0175 \u00b0"
+      },
+      "correct_answer": "A",
+      "correct_value": "-0.0351 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = -0.0000\u00b0 - 0.0351\u00b0 = -0.0351 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 109,
+      "question": "Total reserve = 464.2046 MW, total Pmax = 650.0000 MW. What is the reserve margin as % of capacity?",
+      "options": {
+        "A": "64.2745 %",
+        "B": "35.7081 %",
+        "C": "71.4161 %",
+        "D": "-70.9953 %"
+      },
+      "correct_answer": "C",
+      "correct_value": "71.4161 %",
+      "category": "System Reserve",
+      "difficulty": "Hard",
+      "explanation": "Reserve margin = reserve/Pmax \u00d7 100 = 71.4161 %.",
+      "source": "deterministic-template",
+      "template_name": "total_reserve"
+    },
+    {
+      "id": 110,
+      "question": "If total load decreases, which generator would an economic dispatch reduce first?",
+      "options": {
+        "A": "Gen 4",
+        "B": "Gen 1 (Slack)",
+        "C": "Gen 2",
+        "D": "Gen 3"
+      },
+      "correct_answer": "A",
+      "correct_value": "Gen 4",
+      "category": "Economic Dispatch",
+      "difficulty": "Hard",
+      "explanation": "The most expensive generator (Gen 4, Cost=25.0) is reduced first.",
+      "source": "deterministic-template",
+      "template_name": "economic_reasoning"
+    },
+    {
+      "id": 111,
+      "question": "Gen 1 (Slack) produces 17.2004 MW at cost 3.440669. What is the average cost per MW?",
+      "options": {
+        "A": "0.200034",
+        "B": "-0.205212",
+        "C": "-0.207367",
+        "D": "0.221758"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.200034",
+      "category": "Economic Analysis",
+      "difficulty": "Hard",
+      "explanation": "Avg cost/MW = Pcost/P = 3.440669/17.2004 = 0.200034.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_per_mw"
+    },
+    {
+      "id": 112,
+      "question": "Line 5-6 has Ploss = 0.1422 MW, Qloss = -4.6239 Mvar. What is |Sloss|?",
+      "options": {
+        "A": "4.7661 MVA",
+        "B": "6.9391 MVA",
+        "C": "4.7661 MVA",
+        "D": "4.6261 MVA"
+      },
+      "correct_answer": "D",
+      "correct_value": "4.6261 MVA",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "|Sloss| = sqrt(Ploss\u00b2 + Qloss\u00b2) = 4.6261 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_loss"
+    },
+    {
+      "id": 113,
+      "question": "Line 5-6 has Ploss = 0.1422 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "35.7556 %",
+        "B": "8.9389 %",
+        "C": "16.7583 %",
+        "D": "17.8778 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "17.8778 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.1422/0.7954 \u00d7 100 = 17.8778 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 114,
+      "question": "Gen 2 produces 63.1656 MW at cost 11.379788. What is the average cost per MW?",
+      "options": {
+        "A": "0.196994",
+        "B": "0.198014",
+        "C": "0.216190",
+        "D": "0.180158"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.180158",
+      "category": "Economic Analysis",
+      "difficulty": "Hard",
+      "explanation": "Avg cost/MW = Pcost/P = 11.379788/63.1656 = 0.180158.",
+      "source": "deterministic-template",
+      "template_name": "gen_cost_per_mw"
+    },
+    {
+      "id": 115,
+      "question": "For Line 0-7, Qf = 0.1095 Mvar and Qt = -5.0055 Mvar. What is the reactive power loss?",
+      "options": {
+        "A": "4.8960 Mvar",
+        "B": "5.1150 Mvar",
+        "C": "-4.8960 Mvar",
+        "D": "5.1150 Mvar"
+      },
+      "correct_answer": "C",
+      "correct_value": "-4.8960 Mvar",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Qloss = Qf + Qt = 0.1095 + -5.0055 = -4.8960 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 116,
+      "question": "Total Ploss = 0.7954 MW, total Qloss = -67.6335 Mvar. What is total |Sloss|?",
+      "options": {
+        "A": "-66.8381 MVA",
+        "B": "67.6382 MVA",
+        "C": "68.4289 MVA",
+        "D": "101.4573 MVA"
+      },
+      "correct_answer": "B",
+      "correct_value": "67.6382 MVA",
+      "category": "System Losses",
+      "difficulty": "Hard",
+      "explanation": "|Sloss| = sqrt(0.7954\u00b2 + -67.6335\u00b2) = 67.6382 MVA.",
+      "source": "deterministic-template",
+      "template_name": "total_apparent_loss"
+    },
+    {
+      "id": 117,
+      "question": "For Line 0-7 (Bus 0 \u2192 Bus 7), Va_from = -0.0000\u00b0 and Va_to = -0.2018\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.1009 \u00b0",
+        "B": "0.2018 \u00b0",
+        "C": "0.4036 \u00b0",
+        "D": "-0.2018 \u00b0"
+      },
+      "correct_answer": "B",
+      "correct_value": "0.2018 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = -0.0000\u00b0 - -0.2018\u00b0 = 0.2018 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 118,
+      "question": "Bus 2 has Vm = 2.216969 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.216969 p.u.",
+        "B": "2.433938 p.u.",
+        "C": "0.608484 p.u.",
+        "D": "-1.231225 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "1.216969 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.216969 - 1.0| = 1.216969 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 119,
+      "question": "For Line 6-7, Pf = 14.4301 MW and Pt = -14.4091 MW. What is the active power loss?",
+      "options": {
+        "A": "28.8392 MW",
+        "B": "0.0210 MW",
+        "C": "-0.0210 MW",
+        "D": "28.8392 MW"
+      },
+      "correct_answer": "B",
+      "correct_value": "0.0210 MW",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Ploss = Pf + Pt = 14.4301 + -14.4091 = 0.0210 MW.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 120,
+      "question": "Gen 2 dispatches 63.1656 MW. Total generation = 185.7954 MW. What percentage of total generation does it provide?",
+      "options": {
+        "A": "30.5977 %",
+        "B": "33.9974 %",
+        "C": "38.8153 %",
+        "D": "33.4872 %"
+      },
+      "correct_answer": "B",
+      "correct_value": "33.9974 %",
+      "category": "Generation Distribution",
+      "difficulty": "Hard",
+      "explanation": "Share = 63.1656/185.7954 \u00d7 100 = 33.9974 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_dispatch_share"
+    },
+    {
+      "id": 121,
+      "question": "What is the remaining thermal margin of Line 1-2?",
+      "options": {
+        "A": "-3115.3450 %",
+        "B": "-6230.6900 %",
+        "C": "-12461.3800 %",
+        "D": "6330.6900 %"
+      },
+      "correct_answer": "B",
+      "correct_value": "-6230.6900 %",
+      "category": "Constraint Analysis",
+      "difficulty": "Hard",
+      "explanation": "Margin = 100% - 6330.69% = -6230.6900 %.",
+      "source": "deterministic-template",
+      "template_name": "margin_to_limit"
+    },
+    {
+      "id": 122,
+      "question": "For Line 1-2, Pf = 62.5129 MW and Pt = -62.1818 MW. What is the active power loss?",
+      "options": {
+        "A": "124.6947 MW",
+        "B": "0.3311 MW",
+        "C": "124.6947 MW",
+        "D": "-0.3311 MW"
+      },
+      "correct_answer": "B",
+      "correct_value": "0.3311 MW",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Ploss = Pf + Pt = 62.5129 + -62.1818 = 0.3311 MW.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 123,
+      "question": "If Load C increases and no limits bind, which generator increases first?",
+      "options": {
+        "A": "Gen 3",
+        "B": "Gen 1 (Slack)",
+        "C": "Gen 4",
+        "D": "Gen 2"
+      },
+      "correct_answer": "D",
+      "correct_value": "Gen 2",
+      "category": "Economic Dispatch",
+      "difficulty": "Hard",
+      "explanation": "The cheapest generator (Gen 2, Cost=18.0) is dispatched up first.",
+      "source": "deterministic-template",
+      "template_name": "economic_reasoning"
+    },
+    {
+      "id": 124,
+      "question": "Gen 1 (Slack) dispatches 17.2004 MW. Total generation = 185.7954 MW. What percentage of total generation does it provide?",
+      "options": {
+        "A": "8.7280 %",
+        "B": "9.2577 %",
+        "C": "11.1092 %",
+        "D": "4.6288 %"
+      },
+      "correct_answer": "B",
+      "correct_value": "9.2577 %",
+      "category": "Generation Distribution",
+      "difficulty": "Hard",
+      "explanation": "Share = 17.2004/185.7954 \u00d7 100 = 9.2577 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_dispatch_share"
+    },
+    {
+      "id": 125,
+      "question": "For Line 2-3, Qf = -0.8444 Mvar and Qt = -4.0212 Mvar. What is the reactive power loss?",
+      "options": {
+        "A": "4.8656 Mvar",
+        "B": "3.1768 Mvar",
+        "C": "-4.8656 Mvar",
+        "D": "4.8656 Mvar"
+      },
+      "correct_answer": "C",
+      "correct_value": "-4.8656 Mvar",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Qloss = Qf + Qt = -0.8444 + -4.0212 = -4.8656 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 126,
+      "question": "Gen 3 has Pcost = 9.667287. Total cost = 39.871796. What percentage of total cost does this generator contribute?",
+      "options": {
+        "A": "24.2459 %",
+        "B": "24.5767 %",
+        "C": "23.7412 %",
+        "D": "-25.2094 %"
+      },
+      "correct_answer": "A",
+      "correct_value": "24.2459 %",
+      "category": "Cost Distribution",
+      "difficulty": "Hard",
+      "explanation": "Share = 9.667287/39.871796 \u00d7 100 = 24.2459 %.",
+      "source": "deterministic-template",
+      "template_name": "cost_share_per_gen"
+    },
+    {
+      "id": 127,
+      "question": "Bus 3 has Vm = 2.212736 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.212736 p.u.",
+        "B": "1.091462 p.u.",
+        "C": "0.970189 p.u.",
+        "D": "2.425472 p.u."
+      },
+      "correct_answer": "A",
+      "correct_value": "1.212736 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.212736 - 1.0| = 1.212736 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 128,
+      "question": "For Line 1-4 (Bus 1 \u2192 Bus 4), Va_from = 0.0351\u00b0 and Va_to = 0.0572\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.0221 \u00b0",
+        "B": "0.0442 \u00b0",
+        "C": "-0.0221 \u00b0",
+        "D": "-0.0111 \u00b0"
+      },
+      "correct_answer": "C",
+      "correct_value": "-0.0221 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = 0.0351\u00b0 - 0.0572\u00b0 = -0.0221 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 129,
+      "question": "Bus 0 has Vm = 2.232618 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.355880 p.u.",
+        "B": "1.232618 p.u.",
+        "C": "0.918331 p.u.",
+        "D": "-1.215427 p.u."
+      },
+      "correct_answer": "B",
+      "correct_value": "1.232618 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.232618 - 1.0| = 1.232618 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 130,
+      "question": "Line 1-4 has Ploss = 0.0005 MW, Qloss = -9.9841 Mvar. What is |Sloss|?",
+      "options": {
+        "A": "9.9841 MVA",
+        "B": "14.9762 MVA",
+        "C": "9.9846 MVA",
+        "D": "9.9846 MVA"
+      },
+      "correct_answer": "A",
+      "correct_value": "9.9841 MVA",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "|Sloss| = sqrt(Ploss\u00b2 + Qloss\u00b2) = 9.9841 MVA.",
+      "source": "deterministic-template",
+      "template_name": "apparent_power_loss"
+    },
+    {
+      "id": 131,
+      "question": "For Line 1-4, Qf = -5.9707 Mvar and Qt = -4.0134 Mvar. What is the reactive power loss?",
+      "options": {
+        "A": "9.9841 Mvar",
+        "B": "-9.9841 Mvar",
+        "C": "-1.9573 Mvar",
+        "D": "9.9841 Mvar"
+      },
+      "correct_answer": "B",
+      "correct_value": "-9.9841 Mvar",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Qloss = Qf + Qt = -5.9707 + -4.0134 = -9.9841 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 132,
+      "question": "Gen 3 has cost coefficients a = 0.030000, b = 22.000000, and dispatches P = 43.9159 MW. What is its incremental cost (dC/dP = 2aP + b)?",
+      "options": {
+        "A": "24.634954",
+        "B": "26.607911",
+        "C": "19.707963",
+        "D": "22.171459"
+      },
+      "correct_answer": "A",
+      "correct_value": "24.634954",
+      "category": "Economic Analysis",
+      "difficulty": "Hard",
+      "explanation": "dC/dP = 2 \u00d7 0.030000 \u00d7 43.9159 + 22.000000 = 24.634954.",
+      "source": "deterministic-template",
+      "template_name": "incremental_cost"
+    },
+    {
+      "id": 133,
+      "question": "For Line 2-3 (Bus 2 \u2192 Bus 3), Va_from = -0.5464\u00b0 and Va_to = -0.7200\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.3472 \u00b0",
+        "B": "0.0868 \u00b0",
+        "C": "0.1736 \u00b0",
+        "D": "-0.1736 \u00b0"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.1736 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = -0.5464\u00b0 - -0.7200\u00b0 = 0.1736 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 134,
+      "question": "For Line 4-5 (Bus 4 \u2192 Bus 5), Va_from = 0.0572\u00b0 and Va_to = -0.3590\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.2081 \u00b0",
+        "B": "0.8324 \u00b0",
+        "C": "0.4162 \u00b0",
+        "D": "-0.4162 \u00b0"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.4162 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = 0.0572\u00b0 - -0.3590\u00b0 = 0.4162 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 135,
+      "question": "For Line 2-3, Pf = 12.1818 MW and Pt = -12.1633 MW. What is the active power loss?",
+      "options": {
+        "A": "24.3451 MW",
+        "B": "-0.0185 MW",
+        "C": "24.3451 MW",
+        "D": "0.0185 MW"
+      },
+      "correct_answer": "D",
+      "correct_value": "0.0185 MW",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Ploss = Pf + Pt = 12.1818 + -12.1633 = 0.0185 MW.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 136,
+      "question": "For Line 0-1, Qf = -6.4031 Mvar and Qt = -3.5695 Mvar. What is the reactive power loss?",
+      "options": {
+        "A": "-2.8336 Mvar",
+        "B": "9.9726 Mvar",
+        "C": "-9.9726 Mvar",
+        "D": "9.9726 Mvar"
+      },
+      "correct_answer": "C",
+      "correct_value": "-9.9726 Mvar",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Qloss = Qf + Qt = -6.4031 + -3.5695 = -9.9726 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 137,
+      "question": "Bus 5 has Vm = 2.221111 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.099000 p.u.",
+        "B": "0.954221 p.u.",
+        "C": "1.221111 p.u.",
+        "D": "1.185974 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "1.221111 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.221111 - 1.0| = 1.221111 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 138,
+      "question": "For Line 3-5 (Bus 3 \u2192 Bus 5), Va_from = -0.7200\u00b0 and Va_to = -0.3590\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.3610 \u00b0",
+        "B": "-0.1805 \u00b0",
+        "C": "-0.3610 \u00b0",
+        "D": "0.7220 \u00b0"
+      },
+      "correct_answer": "C",
+      "correct_value": "-0.3610 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = -0.7200\u00b0 - -0.3590\u00b0 = -0.3610 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 139,
+      "question": "Gen 4 dispatches 61.5135 MW. Total generation = 185.7954 MW. What percentage of total generation does it provide?",
+      "options": {
+        "A": "29.7974 %",
+        "B": "31.5788 %",
+        "C": "-31.6689 %",
+        "D": "33.1082 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "33.1082 %",
+      "category": "Generation Distribution",
+      "difficulty": "Hard",
+      "explanation": "Share = 61.5135/185.7954 \u00d7 100 = 33.1082 %.",
+      "source": "deterministic-template",
+      "template_name": "gen_dispatch_share"
+    },
+    {
+      "id": 140,
+      "question": "For Line 0-7, Pf = 20.6255 MW and Pt = -20.5909 MW. What is the active power loss?",
+      "options": {
+        "A": "0.0346 MW",
+        "B": "41.2164 MW",
+        "C": "-0.0346 MW",
+        "D": "41.2164 MW"
+      },
+      "correct_answer": "A",
+      "correct_value": "0.0346 MW",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Ploss = Pf + Pt = 20.6255 + -20.5909 = 0.0346 MW.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 141,
+      "question": "For Line 3-5, Pf = -27.8367 MW and Pt = 27.9030 MW. What is the active power loss?",
+      "options": {
+        "A": "-0.0663 MW",
+        "B": "-55.7397 MW",
+        "C": "0.0663 MW",
+        "D": "55.7397 MW"
+      },
+      "correct_answer": "C",
+      "correct_value": "0.0663 MW",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Ploss = Pf + Pt = -27.8367 + 27.9030 = 0.0663 MW.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    },
+    {
+      "id": 142,
+      "question": "For Line 0-1, |Sf| = 0.072617 p.u. and Vm_from = 2.232618 p.u. What is the current magnitude |If| = |Sf|/Vm?",
+      "options": {
+        "A": "0.072617 p.u.",
+        "B": "0.162125 p.u.",
+        "C": "0.032525 p.u.",
+        "D": "0.065050 p.u."
+      },
+      "correct_answer": "C",
+      "correct_value": "0.032525 p.u.",
+      "category": "Branch Current",
+      "difficulty": "Hard",
+      "explanation": "|If| = |Sf|/Vm = 0.072617/2.232618 = 0.032525 p.u..",
+      "source": "deterministic-template",
+      "template_name": "branch_current_magnitude"
+    },
+    {
+      "id": 143,
+      "question": "Bus 4 has Vm = 2.234807 p.u. What is its voltage deviation |Vm - 1.0|?",
+      "options": {
+        "A": "1.409415 p.u.",
+        "B": "1.481768 p.u.",
+        "C": "1.405403 p.u.",
+        "D": "1.234807 p.u."
+      },
+      "correct_answer": "D",
+      "correct_value": "1.234807 p.u.",
+      "category": "Voltage Quality",
+      "difficulty": "Hard",
+      "explanation": "|Vm - 1.0| = |2.234807 - 1.0| = 1.234807 p.u..",
+      "source": "deterministic-template",
+      "template_name": "voltage_deviation"
+    },
+    {
+      "id": 144,
+      "question": "For Line 5-6 (Bus 5 \u2192 Bus 6), Va_from = -0.3590\u00b0 and Va_to = -0.0193\u00b0. What is the angle difference \u03b4 = Va_from - Va_to?",
+      "options": {
+        "A": "0.3397 \u00b0",
+        "B": "-0.3397 \u00b0",
+        "C": "-0.1699 \u00b0",
+        "D": "0.6794 \u00b0"
+      },
+      "correct_answer": "B",
+      "correct_value": "-0.3397 \u00b0",
+      "category": "Angle Analysis",
+      "difficulty": "Hard",
+      "explanation": "\u03b4 = -0.3590\u00b0 - -0.0193\u00b0 = -0.3397 \u00b0.",
+      "source": "deterministic-template",
+      "template_name": "angle_difference"
+    },
+    {
+      "id": 145,
+      "question": "Line 0-7 has Ploss = 0.0347 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "4.5994 %",
+        "B": "5.2351 %",
+        "C": "-4.4701 %",
+        "D": "4.3626 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "4.3626 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.0347/0.7954 \u00d7 100 = 4.3626 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 146,
+      "question": "Line 2-3 has Ploss = 0.0184 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "2.1976 %",
+        "B": "-2.3744 %",
+        "C": "2.2175 %",
+        "D": "2.3133 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "2.3133 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.0184/0.7954 \u00d7 100 = 2.3133 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 147,
+      "question": "What is the total spinning reserve (sum of Pmax - P across all generators)?",
+      "options": {
+        "A": "464.2046 MW",
+        "B": "185.7954 MW",
+        "C": "232.1023 MW",
+        "D": "650.0000 MW"
+      },
+      "correct_answer": "A",
+      "correct_value": "464.2046 MW",
+      "category": "System Reserve",
+      "difficulty": "Hard",
+      "explanation": "Total reserve = \u03a3(Pmax - P) = 464.2046 MW.",
+      "source": "deterministic-template",
+      "template_name": "total_reserve"
+    },
+    {
+      "id": 148,
+      "question": "Line 4-5 has Ploss = 0.1798 MW. Total system Ploss = 0.7954 MW. What percentage of total losses does this branch contribute?",
+      "options": {
+        "A": "24.8655 %",
+        "B": "18.2558 %",
+        "C": "24.8766 %",
+        "D": "22.6050 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "22.6050 %",
+      "category": "Loss Distribution",
+      "difficulty": "Hard",
+      "explanation": "Fraction = 0.1798/0.7954 \u00d7 100 = 22.6050 %.",
+      "source": "deterministic-template",
+      "template_name": "loss_fraction_per_branch"
+    },
+    {
+      "id": 149,
+      "question": "What is the average loading percentage across all branches?",
+      "options": {
+        "A": "5466.8444 %",
+        "B": "2460.0800 %",
+        "C": "-2704.7197 %",
+        "D": "2733.4222 %"
+      },
+      "correct_answer": "D",
+      "correct_value": "2733.4222 %",
+      "category": "System Statistics",
+      "difficulty": "Hard",
+      "explanation": "Avg loading = 2733.4222 %.",
+      "source": "deterministic-template",
+      "template_name": "system_statistics"
+    },
+    {
+      "id": 150,
+      "question": "For Line 1-2, Qf = 9.9947 Mvar and Qt = -19.1556 Mvar. What is the reactive power loss?",
+      "options": {
+        "A": "9.1609 Mvar",
+        "B": "29.1503 Mvar",
+        "C": "-9.1609 Mvar",
+        "D": "29.1503 Mvar"
+      },
+      "correct_answer": "C",
+      "correct_value": "-9.1609 Mvar",
+      "category": "Branch Losses",
+      "difficulty": "Hard",
+      "explanation": "Qloss = Qf + Qt = 9.9947 + -19.1556 = -9.1609 Mvar.",
+      "source": "deterministic-template",
+      "template_name": "cross_table_loss"
+    }
+  ]
+}
